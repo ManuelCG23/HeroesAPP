@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  direccion: 'https://manuel-camacho.com/api'
 };
