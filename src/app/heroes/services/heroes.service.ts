@@ -26,6 +26,17 @@ export class HeroesService {
     return this.http.get<Heroe[]>(`${this.dirURL}/heroes?q=${termino}&_limit=${this.numSug}`);
   }
 
+  agregarHeroe( heroe: Heroe ) : Observable<Heroe>{
+    return this.http.post<Heroe>(`${this.dirURL}/heroes`, heroe);
+  }
+
+  actualizarHeroe( heroe: Heroe ) : Observable<Heroe>{
+    return this.http.put<Heroe>(`${this.dirURL}/heroes/${heroe.id}`, heroe);
+  }
+
+  borrarHeroe( id: string ) : Observable<any>{
+    return this.http.delete<any>(`${this.dirURL}/heroes/${id}`);
+  }
 
 
   // http://localhost:3000/heroes?q=a&_limit=7
